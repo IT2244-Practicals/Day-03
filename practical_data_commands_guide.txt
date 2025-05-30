@@ -1,0 +1,91 @@
+
+### Basic File Operations and Text Extraction with practical_data.tsv
+
+# Create a new file named 'practical_data.tsv'
+touch practical_data.tsv
+
+# Open 'practical_data.tsv' using the nano editor for quick editing
+nano practical_data.tsv
+
+# List all files including hidden ones in the current directory
+ls -a
+
+Example output might include:
+
+.
+..
+.bashrc
+.config
+practical_data.tsv
+practical_data.tsv.bak
+scripts
+notes.txt
+
+
+### Extract Columns from Tab or Space Separated Data
+
+# Extract the first column (tab-separated) from 'practical_data.tsv'
+cut -d$'\t' -f1 practical_data.tsv
+
+# Extract the third column (space-separated) from 'practical_data.tsv'
+cut -d' ' -f3 practical_data.tsv
+
+
+### View Beginning and End of Files
+
+# Display the first 3 lines of practical_data.tsv
+head -n3 practical_data.tsv
+
+# Display the last 3 lines of practical_data.tsv
+tail -n3 practical_data.tsv
+
+
+### Editing File to Replace Tabs with Spaces
+
+# Open the file in nano and replace tabs with spaces for easier parsing
+nano practical_data.tsv
+
+
+### Extract Columns After Editing
+
+# After replacing tabs with spaces, extract the first column (space-separated)
+cut -d' ' -f1 practical_data.tsv
+
+# Extract the second column (space-separated)
+cut -d' ' -f2 practical_data.tsv
+
+
+### Displaying Specific Lines
+
+# Display the first 5 lines
+head -5 practical_data.tsv
+
+# Display the last 5 lines
+tail -5 practical_data.tsv
+
+# Extract the 6th line from the file
+head -6 practical_data.tsv | tail -1
+
+
+### Using awk for Flexible Text Processing
+
+# Print the entire file using awk
+awk '{print}' practical_data.tsv
+
+# Print the number of fields (columns) in the first line
+awk '{print NF; exit}' practical_data.tsv
+
+# Print the third column of each line
+awk '{print $3}' practical_data.tsv
+
+
+### Counting Lines and Searching Content
+
+# Count the total number of lines in the file
+wc -l practical_data.tsv
+
+# Search for the term 'dd' in the first 5 lines
+head -n5 practical_data.tsv | grep 'dd'
+
+# Search for the number '6' in the first 7 lines
+head -n7 practical_data.tsv | grep '6'
